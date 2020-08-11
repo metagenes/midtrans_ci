@@ -46,7 +46,7 @@ The REST API to the app is described below.
 
 `POST /`
 
-    curl -i -H 'Accept: application/json' -d 'name=Foo&status=new' http://localhost/midtrans_ci/index.php/product
+    curl -i -H 'Accept: application/json' -d 'customer_name=Name&customer_email=Email&customer_phone=123&product_description=description&total_price=total_price' http://localhost/midtrans_ci/index.php/product
 
 ### Response
 
@@ -56,7 +56,7 @@ The REST API to the app is described below.
     Connection: close
     Content-Type: application/json
     Location: /thing/1
-    Content-Length: 36
+    Content-Length: 36t
 
-    {"customer_name":"name","customer_email":"email","customer_phone":"123", "product_description"="description", "total_price":"total_price"}
+    {"snapToken"}
 
