@@ -60,12 +60,22 @@ class Snap extends REST_Controller {
 			// Required
 			$transaction_details = array(
 			  'order_id' => rand(),
-			  'customer_name' => $this->post('customer_name'),
-			  'customer_email' => $this->post('customer_email'),
-			  'customer_phone' => $this->post('customer_phone'),
-			  'product_description' => $this->post('product_description'),
+			  
+			
 			  'gross_amount' => $this->post('total_price'), // no decimal allowed for creditcard
 
+			);
+
+			$customer_details = array(
+			  'first_name' => $this->post('customer_name'),
+			  'email' => $this->post('customer_email'),
+			  'phone' => $this->post('customer_phone'),
+			);
+
+			$item_details = array(
+				'name' => $this->post('product_description'),
+				'quantity' => 1,
+				'price' => $this->post('total_price'), 
 			);
 			// Data yang akan dikirim untuk request redirect_url.
 			$credit_card['secure'] = true;
@@ -73,6 +83,8 @@ class Snap extends REST_Controller {
 			//$credit_card['save_card'] = true;
 			$transaction_data = array(
 				'transaction_details'=> $transaction_details,
+				'customer_details' => $customer_details,
+				'item_details' => $item_details,
 			);
 			$snapToken =  $this->midtrans->getSnapToken($transaction_data);	
 			$transaction_data = $this->response($transaction_data);
