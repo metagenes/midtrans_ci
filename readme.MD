@@ -44,7 +44,7 @@ The REST API to the app is described below.
 
 ### Request
 
-`POST /`
+`POST /product`
 
     curl -i -H 'Accept: application/json' -d 'customer_name=Name&customer_email=Email&customer_phone=123&product_description=description&total_price=total_price' http://localhost/midtrans_ci/index.php/product
 
