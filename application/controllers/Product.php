@@ -2,7 +2,7 @@
 
 
 require APPPATH . '/libraries/REST_Controller.php';
-require 'C:\xampp\htdocs\checkout_ci\vendor\midtrans\midtrans-php\Midtrans.php';
+require 'C:\xampp\htdocs\midtrans_ci\vendor\midtrans\midtrans-php\Midtrans.php';
 use Restserver\Libraries\REST_Controller;
 use Midtrans\Libraries\Midtrans;
 
